@@ -1,9 +1,12 @@
+var webpack = require('webpack');
+var path = require('path');
+
 module.exports = {
-  entry: __dirname + '/src/js/client.js',
+  entry: __dirname + '/src/js/index.js',
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       }
@@ -11,6 +14,6 @@ module.exports = {
   },
   output: {
     path: __dirname + "/src/",
-    filename: "client.min.js"
+    filename: "bundle.js"
   }
 };
