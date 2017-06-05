@@ -1,3 +1,4 @@
+var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
@@ -19,7 +20,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
+  plugins: debug ? [] : [
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
 };
