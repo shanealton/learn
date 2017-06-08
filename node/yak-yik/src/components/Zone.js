@@ -4,9 +4,9 @@ export default class Zone extends React.Component {
   render() {
     return (
       <div>
-        <h2><a href="#">Zone 1</a></h2>
-        <span>10012</span><br />
-        <span>10 comments</span>
+        <h2><a href="#">{this.props.currentZone.name}</a></h2>
+        <span>{this.props.currentZone.zipCode}</span><br />
+        <span>{this.props.currentZone.numComments} comments</span>
       </div>
     )
   }

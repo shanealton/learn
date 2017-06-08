@@ -9548,23 +9548,31 @@ var Zones = function (_React$Component) {
   function Zones() {
     _classCallCheck(this, Zones);
 
-    return _possibleConstructorReturn(this, (Zones.__proto__ || Object.getPrototypeOf(Zones)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Zones.__proto__ || Object.getPrototypeOf(Zones)).call(this));
+
+    _this.state = {
+      list: [{ name: 'Zone 1', zipCode: '10012', numComments: 10 }, { name: 'Zone 2', zipCode: '10013', numComments: 20 }, { name: 'Zone 3', zipCode: '10014', numComments: 30 }, { name: 'Zone 4', zipCode: '10015', numComments: 40 }]
+    };
+    return _this;
   }
 
   _createClass(Zones, [{
     key: 'render',
     value: function render() {
+      var listItems = this.state.list.map(function (zone, i) {
+        return _react2.default.createElement(
+          'li',
+          { key: i },
+          _react2.default.createElement(_Zone2.default, { currentZone: zone })
+        );
+      });
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'ol',
           null,
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(_Zone2.default, null)
-          )
+          listItems
         )
       );
     }
@@ -22173,19 +22181,20 @@ var Zone = function (_React$Component) {
           _react2.default.createElement(
             "a",
             { href: "#" },
-            "Zone 1"
+            this.props.currentZone.name
           )
         ),
         _react2.default.createElement(
           "span",
           null,
-          "10012"
+          this.props.currentZone.zipCode
         ),
         _react2.default.createElement("br", null),
         _react2.default.createElement(
           "span",
           null,
-          "10 comments"
+          this.props.currentZone.numComments,
+          " comments"
         )
       );
     }
