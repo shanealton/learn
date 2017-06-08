@@ -1,9 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Zone from './Zone'
 
-export default class Zones extends Component {
+export default class Zones extends React.Component {
   render() {
     return (
-      <div>Zones</div>
+      <div>
+        <ol>
+          <li><Zone /></li>
+        </ol>
+      </div>
     )
   }
 }
