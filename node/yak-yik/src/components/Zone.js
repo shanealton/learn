@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default class Zone extends React.Component {
+export default class Zone extends Component {
   render() {
     return (
       <div>

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Zone from './Zone'
 
-export default class Zones extends React.Component {
+export default class Zones extends Component {
   constructor() {
     super()
     this.state = {

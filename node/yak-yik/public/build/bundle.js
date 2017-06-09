@@ -9542,8 +9542,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Zones = function (_React$Component) {
-  _inherits(Zones, _React$Component);
+var Zones = function (_Component) {
+  _inherits(Zones, _Component);
 
   function Zones() {
     _classCallCheck(this, Zones);
@@ -9579,7 +9579,7 @@ var Zones = function (_React$Component) {
   }]);
 
   return Zones;
-}(_react2.default.Component);
+}(_react.Component);
 
 exports.default = Zones;
 
@@ -9622,8 +9622,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+var App = function (_Component) {
+  _inherits(App, _Component);
 
   function App() {
     _classCallCheck(this, App);
@@ -9643,7 +9643,7 @@ var App = function (_React$Component) {
   }]);
 
   return App;
-}(_react2.default.Component);
+}(_react.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
@@ -22160,8 +22160,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Zone = function (_React$Component) {
-  _inherits(Zone, _React$Component);
+var Zone = function (_Component) {
+  _inherits(Zone, _Component);
 
   function Zone() {
     _classCallCheck(this, Zone);
@@ -22201,7 +22201,7 @@ var Zone = function (_React$Component) {
   }]);
 
   return Zone;
-}(_react2.default.Component);
+}(_react.Component);
 
 exports.default = Zone;
 
