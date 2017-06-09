@@ -4,23 +4,6 @@ import Zone from './Zone'
 
 const List = styled.ul`
   list-style: none;
-
-  li {
-    padding: 15px;
-  }
-
-  h3 {
-    margin: 0 0 10px 0;
-  }
-
-  span {
-    display: block;
-  }
-
-  a {
-    text-decoration: none;
-    color: ${props => props.dark ? 'black' : 'palevioletred'};
-  }
 `;
 
 export default class Zones extends Component {
@@ -40,9 +23,7 @@ export default class Zones extends Component {
       return (<li key={i}><Zone currentZone={zone} /></li>)
     })
     return (
-      <div>
-        <List>{listItems}</List>
-      </div>
+      <List>{listItems}</List>
     )
   }
 }

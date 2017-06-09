@@ -1,13 +1,35 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+
+const ListItem = styled.div`
+  padding: 15px;
+
+  span {
+    display: block;
+    font-size: 13px;
+  }
+
+  a {
+    display: block;
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+    color: ${props => props.dark ? 'black' : 'tomato'};
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+`;
 
 export default class Zone extends Component {
   render() {
     return (
-      <div>
-        <h3><a href="#">{this.props.currentZone.name}</a></h3>
+      <ListItem>
+        <a href="#">{this.props.currentZone.name}</a>
         <span>{this.props.currentZone.zipCode}</span>
         <span>{this.props.currentZone.numComments} comments</span>
-      </div>
+      </ListItem>
     )
   }
 }
