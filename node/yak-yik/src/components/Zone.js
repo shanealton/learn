@@ -14,10 +14,10 @@ const ListItem = styled.div`
     margin: 0 0 10px 0;
     text-decoration: none;
     cursor: pointer;
-    color: ${props => props.dark ? 'black' : 'tomato'};
+    color: ${props => props.dark ? 'black' : '#8a72be'};
 
     &:hover {
-      opacity: 0.5;
+      opacity: 0.75;
     }
   }
 `;

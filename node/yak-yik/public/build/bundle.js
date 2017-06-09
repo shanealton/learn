@@ -26286,7 +26286,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  padding: 15px;\n\n  span {\n    display: block;\n    font-size: 13px;\n  }\n\n  a {\n    display: block;\n    margin: 0 0 10px 0;\n    text-decoration: none;\n    cursor: pointer;\n    color: ', ';\n\n    &:hover {\n      opacity: 0.5;\n    }\n  }\n'], ['\n  padding: 15px;\n\n  span {\n    display: block;\n    font-size: 13px;\n  }\n\n  a {\n    display: block;\n    margin: 0 0 10px 0;\n    text-decoration: none;\n    cursor: pointer;\n    color: ', ';\n\n    &:hover {\n      opacity: 0.5;\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  padding: 15px;\n\n  span {\n    display: block;\n    font-size: 13px;\n  }\n\n  a {\n    display: block;\n    margin: 0 0 10px 0;\n    text-decoration: none;\n    cursor: pointer;\n    color: ', ';\n\n    &:hover {\n      opacity: 0.75;\n    }\n  }\n'], ['\n  padding: 15px;\n\n  span {\n    display: block;\n    font-size: 13px;\n  }\n\n  a {\n    display: block;\n    margin: 0 0 10px 0;\n    text-decoration: none;\n    cursor: pointer;\n    color: ', ';\n\n    &:hover {\n      opacity: 0.75;\n    }\n  }\n']);
 
 var _react = __webpack_require__(25);
 
@@ -26307,7 +26307,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var ListItem = _styledComponents2.default.div(_templateObject, function (props) {
-  return props.dark ? 'black' : 'tomato';
+  return props.dark ? 'black' : '#8a72be';
 });
 
 var Zone = function (_Component) {
