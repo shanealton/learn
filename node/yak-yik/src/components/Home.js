@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Zones from './Zones/Zones'
+import Comments from './Comments/Comments'
 
 export default class Home extends Component {
   render() {
@@ -11,7 +12,7 @@ export default class Home extends Component {
             <Zones />
           </div>
           <div className="col-md-8">
-            Content
+            <Comments />
           </div>
         </div>
       </div>
