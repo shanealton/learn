@@ -26444,6 +26444,94 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _templateObject = _taggedTemplateLiteral(['\n  min-height: 100vh;\n  padding: 16px 20px;\n  background: #f9f9f9;\n'], ['\n  min-height: 100vh;\n  padding: 16px 20px;\n  background: #f9f9f9;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n'], ['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n']);
+
+var _react = __webpack_require__(32);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = __webpack_require__(83);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _Comment = __webpack_require__(190);
+
+var _Comment2 = _interopRequireDefault(_Comment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents2.default.div(_templateObject);
+
+var Heading = _styledComponents2.default.h2(_templateObject2);
+
+var Comments = function (_Component) {
+  _inherits(Comments, _Component);
+
+  function Comments() {
+    _classCallCheck(this, Comments);
+
+    var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
+
+    _this.state = {
+      list: [{ body: 'comment 1', username: 'shanealton', timestamp: '10:30pm' }, { body: 'comment 2', username: 'shanealton', timestamp: '10:30pm' }, { body: 'comment 3', username: 'shanealton', timestamp: '10:30pm' }]
+    };
+    return _this;
+  }
+
+  _createClass(Comments, [{
+    key: 'render',
+    value: function render() {
+      var commentList = this.state.list.map(function (comment, i) {
+        return _react2.default.createElement(
+          'li',
+          { key: i },
+          _react2.default.createElement(_Comment2.default, { currentComment: comment })
+        );
+      });
+      return _react2.default.createElement(
+        Container,
+        null,
+        _react2.default.createElement(
+          Heading,
+          null,
+          'Comments:'
+        ),
+        _react2.default.createElement(
+          'ul',
+          null,
+          commentList
+        )
+      );
+    }
+  }]);
+
+  return Comments;
+}(_react.Component);
+
+exports.default = Comments;
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(32);
 
 var _react2 = _interopRequireDefault(_react);
@@ -26460,30 +26548,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Comments = function (_Component) {
-  _inherits(Comments, _Component);
+var Comment = function (_Component) {
+  _inherits(Comment, _Component);
 
-  function Comments() {
-    _classCallCheck(this, Comments);
+  function Comment() {
+    _classCallCheck(this, Comment);
 
-    return _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Comment.__proto__ || Object.getPrototypeOf(Comment)).apply(this, arguments));
   }
 
-  _createClass(Comments, [{
+  _createClass(Comment, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         null,
-        'Comments'
+        this.props.currentComment.username,
+        ' ',
+        _react2.default.createElement('br', null),
+        this.props.currentComment.body,
+        ' ',
+        _react2.default.createElement('br', null),
+        this.props.currentComment.timestamp
       );
     }
   }]);
 
-  return Comments;
+  return Comment;
 }(_react.Component);
 
-exports.default = Comments;
+exports.default = Comment;
 
 /***/ })
 /******/ ]);
