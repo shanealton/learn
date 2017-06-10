@@ -11,9 +11,7 @@ injectGlobal`
   }
 `
 
-const Container = styled.div`
-
-`
+const Container = styled.div``
 
 class App extends Component {
   render() {
