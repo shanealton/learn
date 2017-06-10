@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Zones from './Zones'
+import Zones from './Zones/Zones'
 
 export default class Home extends Component {
   render() {
