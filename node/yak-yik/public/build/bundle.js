@@ -26294,6 +26294,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n'], ['\n  display: block;\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n']);
+
 var _react = __webpack_require__(50);
 
 var _react2 = _interopRequireDefault(_react);
@@ -26310,6 +26312,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var CommentItem = _styledComponents2.default.span(_templateObject);
+
 var Comment = function (_Component) {
   _inherits(Comment, _Component);
 
@@ -26325,13 +26331,21 @@ var Comment = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.currentComment.username,
-        ' ',
-        _react2.default.createElement('br', null),
-        this.props.currentComment.body,
-        ' ',
-        _react2.default.createElement('br', null),
-        this.props.currentComment.timestamp
+        _react2.default.createElement(
+          CommentItem,
+          null,
+          this.props.currentComment.username
+        ),
+        _react2.default.createElement(
+          CommentItem,
+          null,
+          this.props.currentComment.body
+        ),
+        _react2.default.createElement(
+          CommentItem,
+          null,
+          this.props.currentComment.timestamp
+        )
       );
     }
   }]);
@@ -26355,7 +26369,8 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  min-height: 100vh;\n  padding: 16px 20px;\n  background: #f9f9f9;\n'], ['\n  min-height: 100vh;\n  padding: 16px 20px;\n  background: #f9f9f9;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n'], ['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n'], ['\n  font-size: 18px;\n  font-weight: 400;\n  margin: 20px 0 20px 0;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n']);
 
 var _react = __webpack_require__(50);
 
@@ -26382,6 +26397,8 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var Container = _styledComponents2.default.div(_templateObject);
 
 var Heading = _styledComponents2.default.h2(_templateObject2);
+
+var List = _styledComponents2.default.ul(_templateObject3);
 
 var Comments = function (_Component) {
   _inherits(Comments, _Component);
@@ -26416,7 +26433,7 @@ var Comments = function (_Component) {
           'Comments:'
         ),
         _react2.default.createElement(
-          'ul',
+          List,
           null,
           commentList
         )

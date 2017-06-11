@@ -14,6 +14,16 @@ const Heading = styled.h2`
   margin: 20px 0 20px 0;
 `
 
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+
+  > li {
+    list-style: none;
+    margin: 15px 0;
+  }
+`
+
 export default class Comments extends Component {
   constructor() {
     super()
@@ -32,7 +42,7 @@ export default class Comments extends Component {
     return (
       <Container>
         <Heading>Comments:</Heading>
-        <ul>{commentList}</ul>
+        <List>{commentList}</List>
       </Container>
     )
   }
