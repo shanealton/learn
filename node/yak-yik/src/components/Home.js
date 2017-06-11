@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Zones from './Zones/Zones'
-import Comments from './Comments/Comments'
+import Zones from './Zones/index'
+import Comments from './Comments/index'
 
 export default class Home extends Component {
   render() {
