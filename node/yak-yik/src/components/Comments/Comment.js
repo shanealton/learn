@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const CommentItem = styled.span`
-  display: block;
+const CommentItem = styled.div`
   margin: 5px 0;
 
   &:first-of-type {

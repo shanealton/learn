@@ -26294,7 +26294,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: block;\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n'], ['\n  display: block;\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n'], ['\n  margin: 5px 0;\n\n  &:first-of-type {\n    font-weight: 600;\n  }\n\n  &:last-of-type {\n    font-size: 11px;\n    color: #777;\n  }\n']);
 
 var _react = __webpack_require__(50);
 
@@ -26314,7 +26314,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var CommentItem = _styledComponents2.default.span(_templateObject);
+var CommentItem = _styledComponents2.default.div(_templateObject);
 
 var Comment = function (_Component) {
   _inherits(Comment, _Component);
