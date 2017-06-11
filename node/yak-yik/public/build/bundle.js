@@ -26263,12 +26263,12 @@ var Home = function (_Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'col-md-4' },
+            { className: 'col-sm-3' },
             _react2.default.createElement(_index2.default, null)
           ),
           _react2.default.createElement(
             'div',
-            { className: 'col-md-8' },
+            { className: 'col-sm-9' },
             _react2.default.createElement(_index4.default, null)
           )
         )

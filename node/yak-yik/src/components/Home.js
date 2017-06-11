@@ -8,10 +8,10 @@ export default class Home extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-sm-3">
             <Zones />
           </div>
-          <div className="col-md-8">
+          <div className="col-sm-9">
             <Comments />
           </div>
         </div>
