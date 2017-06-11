@@ -3,19 +3,33 @@ import styled from 'styled-components'
 import Zones from './Zones/index'
 import Comments from './Comments/index'
 
+const Container = styled.div`
+  display: flex;
+  height: 100vh;
+`
+
+const FlexZone = styled.div`
+  width: 240px;
+  background: #F7F9FA;
+  height: 100vh;
+`
+
+const FlexComment = styled.div`
+  flex: 1;
+  height: 100vh;
+`
+
 export default class Home extends Component {
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-3">
-            <Zones />
-          </div>
-          <div className="col-sm-9">
-            <Comments />
-          </div>
-        </div>
-      </div>
+      <Container>
+        <FlexZone>
+          <Zones />
+        </FlexZone>
+        <FlexComment>
+          <Comments />
+        </FlexComment>
+      </Container>
     )
   }
 }

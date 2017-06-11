@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Zone from './Zone'
 
-const List = styled.ul`
-  list-style: none;
-`;
-
 export default class Zones extends Component {
   constructor() {
     super()
@@ -23,7 +19,7 @@ export default class Zones extends Component {
       return (<li key={i}><Zone currentZone={zone} /></li>)
     })
     return (
-      <List>{listItems}</List>
+      <ul>{listItems}</ul>
     )
   }
 }

@@ -4,14 +4,21 @@ import Comment from './Comment'
 
 const Container = styled.div`
   min-height: 100vh;
-  padding: 16px 20px;
-  background: #f9f9f9;
+  padding: 10px 40px;
 `
 
 const Heading = styled.h2`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  margin: 20px 0 20px 0;
+  color: #1b2733;
+  margin: 0 0 30px 0;
+`
+
+const Breadcrumbs = styled.h3 `
+  font-size: 13px;
+  font-weight: 400;
+  color: #637282;
+  margin: 0 0 20px 0;
 `
 
 const List = styled.ul`
@@ -41,7 +48,8 @@ export default class Comments extends Component {
     })
     return (
       <Container>
-        <Heading>Comments:</Heading>
+        <Heading>Comments</Heading>
+        <Breadcrumbs>Zone 1</Breadcrumbs>
         <List>{commentList}</List>
       </Container>
     )
