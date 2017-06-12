@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Zone from './Zone'
+import Zone from '../presentation/Zone'
 
 export default class Zones extends Component {
   constructor() {

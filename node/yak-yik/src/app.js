@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { injectGlobal } from 'styled-components'
-import Home from './components/Home'
+import Home from './components/layout/Home'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');

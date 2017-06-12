@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Comment from './Comment'
+import Comment from '../presentation/Comment'
 
 const Container = styled.div`
   min-height: 100vh;

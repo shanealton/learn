@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Zones from './Zones/index'
-import Comments from './Comments/index'
+import Zones from '../containers/Zones'
+import Comments from '../containers/Comments'
 
 const Container = styled.div`
   display: flex;
