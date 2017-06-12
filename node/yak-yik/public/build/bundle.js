@@ -12535,7 +12535,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n'], ['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n'], ['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n']);
 
 var _react = __webpack_require__(14);
 
@@ -12575,7 +12575,12 @@ var Comment = function (_Component) {
         _react2.default.createElement(
           CommentItem,
           null,
-          this.props.currentComment.username
+          this.props.currentComment.username,
+          _react2.default.createElement(
+            'span',
+            null,
+            this.props.currentComment.timestamp
+          )
         ),
         _react2.default.createElement(
           CommentItem,
@@ -12648,7 +12653,7 @@ var Comments = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
 
     _this.state = {
-      list: [{ body: 'comment 1', username: 'shanealton', timestamp: '10:30pm' }, { body: 'comment 2', username: 'shanealton', timestamp: '10:30pm' }, { body: 'comment 3', username: 'shanealton', timestamp: '10:30pm' }]
+      list: [{ body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago' }]
     };
     return _this;
   }
