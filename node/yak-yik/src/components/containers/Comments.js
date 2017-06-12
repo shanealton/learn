@@ -7,13 +7,6 @@ const Container = styled.div`
   padding: 10px 40px;
 `
 
-const Heading = styled.h2`
-  font-size: 20px;
-  font-weight: 400;
-  color: #1b2733;
-  margin: 0 0 30px 0;
-`
-
 const Breadcrumbs = styled.h3 `
   font-size: 13px;
   font-weight: 400;
@@ -42,15 +35,27 @@ export default class Comments extends Component {
       ]
     }
   }
+
+  submitComment() {
+    console.log('added comment')
+  }
+
+  updateUsername(e) {
+    console.log('username updated: ' + e.target.value)
+  }
+
   render() {
     const commentList = this.state.list.map((comment, i) => {
       return( <li key={i}><Comment currentComment={comment} /></li> )
     })
     return (
       <Container>
-        <Heading>Comments</Heading>
         <Breadcrumbs>Zone 1</Breadcrumbs>
         <List>{commentList}</List>
+
+        <input onChange={this.updateUsername.bind(this)} type="text" placeholder="Username" /><br />
+        <input type="text" placeholder="Say something..." /><br />
+        <button onClick={this.submitComment.bind(this)}>Add Comment</button>
       </Container>
     )
   }

@@ -26216,9 +26216,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100vh;\n'], ['\n  display: flex;\n  height: 100vh;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  width: 240px;\n  background: #F7F9FA;\n  height: 100vh;\n'], ['\n  width: 240px;\n  background: #F7F9FA;\n  height: 100vh;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1;\n  height: 100vh;\n'], ['\n  flex: 1;\n  height: 100vh;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  max-height: 100vh;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  max-height: 100vh;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  flex: 1;\n  margin-left: 240px;\n  height: 100%;\n'], ['\n  flex: 1;\n  margin-left: 240px;\n  height: 100%;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n'], ['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n'], ['\n  flex: 1;\n']);
 
 var _react = __webpack_require__(14);
 
@@ -26227,6 +26228,10 @@ var _react2 = _interopRequireDefault(_react);
 var _styledComponents = __webpack_require__(18);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _Header = __webpack_require__(194);
+
+var _Header2 = _interopRequireDefault(_Header);
 
 var _Zones = __webpack_require__(191);
 
@@ -26248,9 +26253,11 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var Container = _styledComponents2.default.div(_templateObject);
 
-var FlexZone = _styledComponents2.default.div(_templateObject2);
+var Content = _styledComponents2.default.div(_templateObject2);
 
-var FlexComment = _styledComponents2.default.div(_templateObject3);
+var Sidebar = _styledComponents2.default.div(_templateObject3);
+
+var Body = _styledComponents2.default.div(_templateObject4);
 
 var Home = function (_Component) {
   _inherits(Home, _Component);
@@ -26268,14 +26275,19 @@ var Home = function (_Component) {
         Container,
         null,
         _react2.default.createElement(
-          FlexZone,
+          Sidebar,
           null,
           _react2.default.createElement(_Zones2.default, null)
         ),
         _react2.default.createElement(
-          FlexComment,
+          Content,
           null,
-          _react2.default.createElement(_Comments2.default, null)
+          _react2.default.createElement(_Header2.default, null),
+          _react2.default.createElement(
+            Body,
+            null,
+            _react2.default.createElement(_Comments2.default, null)
+          )
         )
       );
     }
@@ -26300,9 +26312,8 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  min-height: 100vh;\n  padding: 10px 40px;\n'], ['\n  min-height: 100vh;\n  padding: 10px 40px;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n  margin: 0 0 30px 0;\n'], ['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n  margin: 0 0 30px 0;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n'], ['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n'], ['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n']);
 
 var _react = __webpack_require__(14);
 
@@ -26328,11 +26339,9 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var Container = _styledComponents2.default.div(_templateObject);
 
-var Heading = _styledComponents2.default.h2(_templateObject2);
+var Breadcrumbs = _styledComponents2.default.h3(_templateObject2);
 
-var Breadcrumbs = _styledComponents2.default.h3(_templateObject3);
-
-var List = _styledComponents2.default.ul(_templateObject4);
+var List = _styledComponents2.default.ul(_templateObject3);
 
 var Comments = function (_Component) {
   _inherits(Comments, _Component);
@@ -26349,6 +26358,16 @@ var Comments = function (_Component) {
   }
 
   _createClass(Comments, [{
+    key: 'submitComment',
+    value: function submitComment() {
+      console.log('added comment');
+    }
+  }, {
+    key: 'updateUsername',
+    value: function updateUsername(e) {
+      console.log('username updated: ' + e.target.value);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var commentList = this.state.list.map(function (comment, i) {
@@ -26362,11 +26381,6 @@ var Comments = function (_Component) {
         Container,
         null,
         _react2.default.createElement(
-          Heading,
-          null,
-          'Comments'
-        ),
-        _react2.default.createElement(
           Breadcrumbs,
           null,
           'Zone 1'
@@ -26375,6 +26389,15 @@ var Comments = function (_Component) {
           List,
           null,
           commentList
+        ),
+        _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), type: 'text', placeholder: 'Username' }),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('input', { type: 'text', placeholder: 'Say something...' }),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.submitComment.bind(this) },
+          'Add Comment'
         )
       );
     }
@@ -26615,6 +26638,84 @@ var Zone = function (_Component) {
 }(_react.Component);
 
 exports.default = Zone;
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n  height: 96px;\n  padding: 40px 40px 0 40px;\n  flex: 1 0 100%;\n'], ['\n  height: 96px;\n  padding: 40px 40px 0 40px;\n  flex: 1 0 100%;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  justify-content: space-between;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n'], ['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #777;\n'], ['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #777;\n']);
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = __webpack_require__(18);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents2.default.div(_templateObject);
+
+var Controls = _styledComponents2.default.div(_templateObject2);
+
+var Heading = _styledComponents2.default.h2(_templateObject3);
+
+var Profile = _styledComponents2.default.div(_templateObject4);
+
+var Header = function (_Component) {
+  _inherits(Header, _Component);
+
+  function Header() {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+  }
+
+  _createClass(Header, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        Container,
+        null,
+        _react2.default.createElement(
+          Controls,
+          null,
+          _react2.default.createElement(
+            Heading,
+            null,
+            'Comments'
+          ),
+          _react2.default.createElement(Profile, null)
+        )
+      );
+    }
+  }]);
+
+  return Header;
+}(_react.Component);
+
+exports.default = Header;
 
 /***/ })
 /******/ ]);

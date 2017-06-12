@@ -1,34 +1,42 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Header from '../containers/Header'
 import Zones from '../containers/Zones'
 import Comments from '../containers/Comments'
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  flex-wrap: wrap;
+  max-height: 100vh;
 `
 
-const FlexZone = styled.div`
-  width: 240px;
-  background: #F7F9FA;
-  height: 100vh;
-`
-
-const FlexComment = styled.div`
+const Content = styled.div`
   flex: 1;
-  height: 100vh;
+  margin-left: 240px;
+  height: 100%;
+`
+
+const Sidebar = styled.div`
+  width: 240px;
+  position: fixed;
+  background: #F7F9FA;
+  min-height: 100%;
+`
+
+const Body = styled.div`
+  flex: 1;
 `
 
 export default class Home extends Component {
   render() {
     return (
       <Container>
-        <FlexZone>
-          <Zones />
-        </FlexZone>
-        <FlexComment>
-          <Comments />
-        </FlexComment>
+        <Sidebar><Zones /></Sidebar>
+
+        <Content>
+          <Header />
+          <Body><Comments /></Body>
+        </Content>
       </Container>
     )
   }
