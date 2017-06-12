@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Header from '../containers/Header'
+import Logo from '../containers/Logo'
 import Zones from '../containers/Zones'
 import Comments from '../containers/Comments'
 
@@ -31,7 +32,10 @@ export default class Home extends Component {
   render() {
     return (
       <Container>
-        <Sidebar><Zones /></Sidebar>
+        <Sidebar>
+          <Logo />
+          <Zones />
+        </Sidebar>
 
         <Content>
           <Header />
