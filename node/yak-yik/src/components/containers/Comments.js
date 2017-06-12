@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import update from 'immutability-helper'
 import styled from 'styled-components'
 import Comment from '../presentation/Comment'
 
@@ -28,6 +29,10 @@ export default class Comments extends Component {
   constructor() {
     super()
     this.state = {
+      comment: {
+        username: '',
+        body: ''
+      },
       list: [
         {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
         {body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago'},
@@ -37,11 +42,36 @@ export default class Comments extends Component {
   }
 
   submitComment() {
-    console.log('added comment')
+    console.log('added comment: ' + JSON.stringify(this.state.comment))
+    let updatedList = update(this.state.list, {$push: [this.state.comment]})
+    // let updatedList = Object.assign([], this.state.list)
+    // updatedList.push(this.state.comment)
+
+    this.setState({
+      list: updatedList
+    })
   }
 
   updateUsername(e) {
     console.log('username updated: ' + e.target.value)
+    let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
+    // let updatedComment = Object.assign({}, this.state.comment)
+    // updatedComment['username'] = e.target.value
+
+    this.setState({
+      comment: updatedComment
+    })
+  }
+
+  updateBody(e) {
+    console.log('update comment: ' + e.target.value)
+    let updatedComment = update(this.state.comment, {body: {$set: e.target.value}})
+    // let updatedComment = Object.assign({}, this.state.comment)
+    // updatedComment['body'] = e.target.value
+
+    this.setState({
+      comment: updatedComment
+    })
   }
 
   render() {
@@ -54,7 +84,7 @@ export default class Comments extends Component {
         <List>{commentList}</List>
 
         <input onChange={this.updateUsername.bind(this)} type="text" placeholder="Username" /><br />
-        <input type="text" placeholder="Say something..." /><br />
+        <input onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." /><br />
         <button onClick={this.submitComment.bind(this)}>Add Comment</button>
       </Container>
     )

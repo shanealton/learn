@@ -12560,6 +12560,10 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _immutabilityHelper = __webpack_require__(192);
+
+var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
+
 var _styledComponents = __webpack_require__(14);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -12593,6 +12597,10 @@ var Comments = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
 
     _this.state = {
+      comment: {
+        username: '',
+        body: ''
+      },
       list: [{ body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago' }]
     };
     return _this;
@@ -12601,12 +12609,38 @@ var Comments = function (_Component) {
   _createClass(Comments, [{
     key: 'submitComment',
     value: function submitComment() {
-      console.log('added comment');
+      console.log('added comment: ' + JSON.stringify(this.state.comment));
+      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] }
+      // let updatedList = Object.assign([], this.state.list)
+      // updatedList.push(this.state.comment)
+
+      );this.setState({
+        list: updatedList
+      });
     }
   }, {
     key: 'updateUsername',
     value: function updateUsername(e) {
       console.log('username updated: ' + e.target.value);
+      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { username: { $set: e.target.value } }
+      // let updatedComment = Object.assign({}, this.state.comment)
+      // updatedComment['username'] = e.target.value
+
+      );this.setState({
+        comment: updatedComment
+      });
+    }
+  }, {
+    key: 'updateBody',
+    value: function updateBody(e) {
+      console.log('update comment: ' + e.target.value);
+      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { body: { $set: e.target.value } }
+      // let updatedComment = Object.assign({}, this.state.comment)
+      // updatedComment['body'] = e.target.value
+
+      );this.setState({
+        comment: updatedComment
+      });
     }
   }, {
     key: 'render',
@@ -12633,7 +12667,7 @@ var Comments = function (_Component) {
         ),
         _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), type: 'text', placeholder: 'Username' }),
         _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { type: 'text', placeholder: 'Say something...' }),
+        _react2.default.createElement('input', { onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
         _react2.default.createElement('br', null),
         _react2.default.createElement(
           'button',
@@ -26780,6 +26814,268 @@ module.exports = traverseAllChildren;
 	return stylis
 }));
 
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var invariant = __webpack_require__(193);
+
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var splice = Array.prototype.splice;
+
+var assign = Object.assign || /* istanbul ignore next */ function assign(target, source) {
+  getAllKeys(source).forEach(function(key) {
+    if (hasOwnProperty.call(source, key)) {
+      target[key] = source[key];
+    }
+  });
+  return target;
+};
+
+var getAllKeys = typeof Object.getOwnPropertySymbols === 'function' ?
+  function(obj) { return Object.keys(obj).concat(Object.getOwnPropertySymbols(obj)) } :
+  /* istanbul ignore next */ function(obj) { return Object.keys(obj) };
+
+function copy(object) {
+  if (object instanceof Array) {
+    return object.slice();
+  } else if (object && typeof object === 'object') {
+    return assign(new object.constructor(), object);
+  } else {
+    return object;
+  }
+}
+
+function newContext() {
+  var commands = assign({}, defaultCommands);
+  update.extend = function(directive, fn) {
+    commands[directive] = fn;
+  };
+
+  return update;
+
+  function update(object, spec) {
+    if (!(Array.isArray(object) && Array.isArray(spec))) {
+      invariant(
+        !Array.isArray(spec),
+        'update(): You provided an invalid spec to update(). The spec may ' +
+        'not contain an array except as the value of $set, $push, $unshift, ' +
+        '$splice or any custom command allowing an array value.'
+      );
+    }
+
+    invariant(
+      typeof spec === 'object' && spec !== null,
+      'update(): You provided an invalid spec to update(). The spec and ' +
+      'every included key path must be plain objects containing one of the ' +
+      'following commands: %s.',
+      Object.keys(commands).join(', ')
+    );
+
+    var nextObject = object;
+    var specKeys = getAllKeys(spec);
+    var index, key;
+    getAllKeys(spec).forEach(function(key) {
+      if (hasOwnProperty.call(commands, key)) {
+        nextObject = commands[key](spec[key], nextObject, spec, object);
+      } else {
+        var nextValueForKey = update(object[key], spec[key]);
+        if (nextValueForKey !== nextObject[key]) {
+          if (nextObject === object) {
+            nextObject = copy(object);
+          }
+          nextObject[key] = nextValueForKey;
+        }
+      }
+    })
+    return nextObject;
+  }
+
+}
+
+var defaultCommands = {
+  $push: function(value, original, spec) {
+    invariantPushAndUnshift(original, spec, '$push');
+    return original.concat(value);
+  },
+  $unshift: function(value, original, spec) {
+    invariantPushAndUnshift(original, spec, '$unshift');
+    return value.concat(original);
+  },
+  $splice: function(value, nextObject, spec, object) {
+    var originalValue = nextObject === object ? copy(object) : nextObject;
+    invariantSplices(originalValue, spec);
+    value.forEach(function(args) {
+      invariantSplice(args);
+      splice.apply(originalValue, args);
+    });
+    return originalValue;
+  },
+  $set: function(value, original, spec) {
+    invariantSet(spec);
+    return value;
+  },
+  $unset: function(value, nextObject, spec, object) {
+    invariant(
+      Array.isArray(value),
+      'update(): expected spec of $unset to be an array; got %s. ' +
+      'Did you forget to wrap the key(s) in an array?',
+      value
+    );
+    var originalValue = nextObject;
+    value.forEach(function(key) {
+      if (Object.hasOwnProperty.call(originalValue, key)) {
+        if (nextObject === object) nextObject = copy(object);
+        delete nextObject[key];
+      }
+    });
+    return nextObject;
+  },
+  $merge: function(value, nextObject, spec, object) {
+    var nextObject = nextObject;
+    invariantMerge(nextObject, value);
+    getAllKeys(value).forEach(function(key) {
+      if (value[key] !== nextObject[key]) {
+        if (nextObject === object) nextObject = copy(object);
+        nextObject[key] = value[key];
+      }
+    });
+    return nextObject;
+  },
+  $apply: function(value, original) {
+    invariantApply(value);
+    return value(original);
+  }
+};
+
+module.exports = newContext();
+module.exports.newContext = newContext;
+
+// invariants
+
+function invariantPushAndUnshift(value, spec, command) {
+  invariant(
+    Array.isArray(value),
+    'update(): expected target of %s to be an array; got %s.',
+    command,
+    value
+  );
+  var specValue = spec[command];
+  invariant(
+    Array.isArray(specValue),
+    'update(): expected spec of %s to be an array; got %s. ' +
+    'Did you forget to wrap your parameter in an array?',
+    command,
+    specValue
+  );
+}
+
+function invariantSplices(value, spec) {
+  invariant(
+    Array.isArray(value),
+    'Expected $splice target to be an array; got %s',
+    value
+  );
+  invariantSplice(spec['$splice']);
+}
+
+function invariantSplice(value) {
+  invariant(
+    Array.isArray(value),
+    'update(): expected spec of $splice to be an array of arrays; got %s. ' +
+    'Did you forget to wrap your parameters in an array?',
+    value
+  );
+}
+
+function invariantApply(fn) {
+  invariant(
+    typeof fn === 'function',
+    'update(): expected spec of $apply to be a function; got %s.',
+    fn
+  );
+}
+
+function invariantSet(spec) {
+  invariant(
+    Object.keys(spec).length === 1,
+    'Cannot have more than one key in an object with $set'
+  );
+}
+
+function invariantMerge(target, specValue) {
+  invariant(
+    specValue && typeof specValue === 'object',
+    'update(): $merge expects a spec of type \'object\'; got %s',
+    specValue
+  );
+  invariant(
+    target && typeof target === 'object',
+    'update(): $merge expects a target of type \'object\'; got %s',
+    target
+  );
+}
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
