@@ -12740,7 +12740,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 96px;\n  padding: 30px 0 0 15px;\n'], ['\n  width: 100%;\n  height: 96px;\n  padding: 30px 0 0 15px;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 96px;\n  padding: 40px 0 0 15px;\n'], ['\n  width: 100%;\n  height: 96px;\n  padding: 40px 0 0 15px;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  background: #777;\n'], ['\n  width: 30px;\n  height: 30px;\n  background: #777;\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12749,10 +12750,6 @@ var _react2 = _interopRequireDefault(_react);
 var _styledComponents = __webpack_require__(14);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _LogoIcon = __webpack_require__(90);
-
-var _LogoIcon2 = _interopRequireDefault(_LogoIcon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12765,6 +12762,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Container = _styledComponents2.default.div(_templateObject);
+
+var LogoIcon = _styledComponents2.default.div(_templateObject2);
 
 var Logo = function (_Component) {
   _inherits(Logo, _Component);
@@ -12781,7 +12780,7 @@ var Logo = function (_Component) {
       return _react2.default.createElement(
         Container,
         null,
-        _react2.default.createElement(_LogoIcon2.default, null)
+        _react2.default.createElement(LogoIcon, null)
       );
     }
   }]);
@@ -12936,89 +12935,7 @@ var Comment = function (_Component) {
 exports.default = Comment;
 
 /***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(12);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LogoIcon = function (_Component) {
-    _inherits(LogoIcon, _Component);
-
-    function LogoIcon() {
-        _classCallCheck(this, LogoIcon);
-
-        return _possibleConstructorReturn(this, (LogoIcon.__proto__ || Object.getPrototypeOf(LogoIcon)).apply(this, arguments));
-    }
-
-    _createClass(LogoIcon, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "svg",
-                { width: "30px", height: "45px", viewBox: "0 0 30 45" },
-                _react2.default.createElement(
-                    "title",
-                    null,
-                    "logo"
-                ),
-                _react2.default.createElement(
-                    "desc",
-                    null,
-                    "Created with Sketch Beta."
-                ),
-                _react2.default.createElement("defs", null),
-                _react2.default.createElement(
-                    "g",
-                    { id: "Page-1", stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
-                    _react2.default.createElement(
-                        "g",
-                        { id: "Ghost", transform: "translate(-351.000000, -302.000000)" },
-                        _react2.default.createElement(
-                            "g",
-                            { id: "logo", transform: "translate(351.000000, 302.000000)" },
-                            _react2.default.createElement("circle", { id: "Oval", fill: "#C9ACE3", cx: "15", cy: "15", r: "15" }),
-                            _react2.default.createElement("rect", { id: "Rectangle", fill: "#C9ACE3", x: "0", y: "14.55", width: "30", height: "15.45" }),
-                            _react2.default.createElement("rect", { id: "Rectangle-2", fill: "#C9ACE3", x: "0", y: "21", width: "6", height: "18.45", rx: "3" }),
-                            _react2.default.createElement("rect", { id: "Rectangle-2-Copy-2", fill: "#C9ACE3", x: "12", y: "17.1", width: "6", height: "18.45", rx: "3" }),
-                            _react2.default.createElement("rect", { id: "Rectangle-2-Copy-4", fill: "#C9ACE3", x: "24", y: "14.25", width: "6", height: "18.45", rx: "3" }),
-                            _react2.default.createElement("circle", { id: "Oval-2", fill: "#C9ACE3", cx: "27", cy: "37.2", r: "3" }),
-                            _react2.default.createElement("rect", { id: "Rectangle-2-Copy", fill: "#F7F9FA", x: "6", y: "26.55", width: "6", height: "18.45", rx: "3" }),
-                            _react2.default.createElement("rect", { id: "Rectangle-2-Copy-3", fill: "#F7F9FA", x: "18", y: "26.4", width: "6", height: "18.45", rx: "3" }),
-                            _react2.default.createElement("path", { d: "M5.7,16.05 C5.7,14.4759885 6.97598846,13.2 8.55,13.2 C10.1240115,13.2 11.4,14.4759885 11.4,16.05 L5.7,16.05 Z", id: "Combined-Shape", fill: "#8E79A1" }),
-                            _react2.default.createElement("path", { d: "M18.6,16.05 C18.6,14.4759885 19.8759885,13.2 21.45,13.2 C23.0240115,13.2 24.3,14.4759885 24.3,16.05 L18.6,16.05 Z", id: "Combined-Shape-Copy-4", fill: "#8E79A1" }),
-                            _react2.default.createElement("path", { d: "M10.2,24.9 C10.2,22.3318759 12.2818759,20.25 14.85,20.25 C17.4181241,20.25 19.5,22.3318759 19.5,24.9 L10.2,24.9 Z", id: "Combined-Shape-Copy-2", fill: "#8E79A1", transform: "translate(14.850000, 22.575000) scale(1, -1) translate(-14.850000, -22.575000) " })
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return LogoIcon;
-}(_react.Component);
-
-exports.default = LogoIcon;
-
-/***/ }),
+/* 90 */,
 /* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
