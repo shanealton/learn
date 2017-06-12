@@ -8,13 +8,11 @@ import Comments from '../containers/Comments'
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-height: 100vh;
 `
 
 const Content = styled.div`
   flex: 1;
   margin-left: 240px;
-  height: 100%;
 `
 
 const Sidebar = styled.div`
@@ -26,6 +24,7 @@ const Sidebar = styled.div`
 
 const Body = styled.div`
   flex: 1;
+  overflow-y: scroll;
 `
 
 export default class Home extends Component {

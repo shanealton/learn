@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import Comment from '../presentation/Comment'
 
 const Container = styled.div`
-  min-height: 100vh;
   padding: 10px 40px;
 `
 

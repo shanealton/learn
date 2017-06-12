@@ -6,11 +6,6 @@ import Home from './components/layout/Home'
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
-  html{
-    height: 100%;
-    overflow: hidden;
-  }
-
   ul,li {
     list-style: none;
   }

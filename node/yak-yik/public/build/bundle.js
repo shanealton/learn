@@ -12378,10 +12378,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  max-height: 100vh;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  max-height: 100vh;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  flex: 1;\n  margin-left: 240px;\n  height: 100%;\n'], ['\n  flex: 1;\n  margin-left: 240px;\n  height: 100%;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  flex: 1;\n  margin-left: 240px;\n'], ['\n  flex: 1;\n  margin-left: 240px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n'], ['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n'], ['\n  flex: 1;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  overflow-y: scroll;\n'], ['\n  flex: 1;\n  overflow-y: scroll;\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12484,7 +12484,7 @@ module.exports = __webpack_require__(121);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  @import url(\'https://fonts.googleapis.com/css?family=Open+Sans:400,600\');\n\n  html{\n    height: 100%;\n    overflow: hidden;\n  }\n\n  ul,li {\n    list-style: none;\n  }\n\n  p, ul, li, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: \'Open Sans\', sans-serif;\n  }\n'], ['\n  @import url(\'https://fonts.googleapis.com/css?family=Open+Sans:400,600\');\n\n  html{\n    height: 100%;\n    overflow: hidden;\n  }\n\n  ul,li {\n    list-style: none;\n  }\n\n  p, ul, li, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: \'Open Sans\', sans-serif;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  @import url(\'https://fonts.googleapis.com/css?family=Open+Sans:400,600\');\n\n  ul,li {\n    list-style: none;\n  }\n\n  p, ul, li, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: \'Open Sans\', sans-serif;\n  }\n'], ['\n  @import url(\'https://fonts.googleapis.com/css?family=Open+Sans:400,600\');\n\n  ul,li {\n    list-style: none;\n  }\n\n  p, ul, li, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n\n  body {\n    font-family: \'Open Sans\', sans-serif;\n  }\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12552,7 +12552,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  min-height: 100vh;\n  padding: 10px 40px;\n'], ['\n  min-height: 100vh;\n  padding: 10px 40px;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  padding: 10px 40px;\n'], ['\n  padding: 10px 40px;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n'], ['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n']);
 
