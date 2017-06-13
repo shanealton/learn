@@ -32,6 +32,17 @@ const CommentItem = styled.div`
   }
 `
 
+const Action = styled.a`
+  font-size: 11px;
+  color: #637282;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #637282;
+  }
+`
+
 export default class Comment extends Component {
   render() {
     return (
@@ -44,6 +55,7 @@ export default class Comment extends Component {
           </CommentItem>
 
           <CommentItem>{this.props.currentComment.body}</CommentItem>
+          <Action>Reply</Action>
         </CommentBody>
       </Container>
     )

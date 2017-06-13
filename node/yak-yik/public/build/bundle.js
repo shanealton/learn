@@ -12586,7 +12586,7 @@ var Container = _styledComponents2.default.div(_templateObject);
 
 var Breadcrumbs = _styledComponents2.default.h3(_templateObject2);
 
-var List = _styledComponents2.default.ul(_templateObject3);
+var CommentsList = _styledComponents2.default.ul(_templateObject3);
 
 var Comments = function (_Component) {
   _inherits(Comments, _Component);
@@ -12644,7 +12644,7 @@ var Comments = function (_Component) {
           'Zone 1'
         ),
         _react2.default.createElement(
-          List,
+          CommentsList,
           null,
           commentList
         ),
@@ -12893,7 +12893,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n'], ['\n  display: flex;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  margin: 3px 15px 0 0;\n  border-radius: 2px;\n  background: #D0D2D3;\n'], ['\n  width: 30px;\n  height: 30px;\n  margin: 3px 15px 0 0;\n  border-radius: 2px;\n  background: #D0D2D3;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1;\n'], ['\n  flex: 1;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n'], ['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n'], ['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  font-size: 11px;\n  color: #637282;\n  cursor: pointer;\n  text-decoration: none;\n\n  &:hover {\n    color: #637282;\n  }\n'], ['\n  font-size: 11px;\n  color: #637282;\n  cursor: pointer;\n  text-decoration: none;\n\n  &:hover {\n    color: #637282;\n  }\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12920,6 +12921,8 @@ var Avatar = _styledComponents2.default.div(_templateObject2);
 var CommentBody = _styledComponents2.default.div(_templateObject3);
 
 var CommentItem = _styledComponents2.default.div(_templateObject4);
+
+var Action = _styledComponents2.default.a(_templateObject5);
 
 var Comment = function (_Component) {
   _inherits(Comment, _Component);
@@ -12954,6 +12957,11 @@ var Comment = function (_Component) {
             CommentItem,
             null,
             this.props.currentComment.body
+          ),
+          _react2.default.createElement(
+            Action,
+            null,
+            'Reply'
           )
         )
       );

@@ -14,7 +14,7 @@ const Breadcrumbs = styled.h3 `
   margin: 0 0 20px 0;
 `
 
-const List = styled.ul`
+const CommentsList = styled.ul`
   margin: 0;
   padding: 0;
 
@@ -65,7 +65,7 @@ export default class Comments extends Component {
     return (
       <Container>
         <Breadcrumbs>Zone 1</Breadcrumbs>
-        <List>{commentList}</List>
+        <CommentsList>{commentList}</CommentsList>
 
         <input onChange={this.updateUsername.bind(this)} type="text" placeholder="Username" /><br />
         <input onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." /><br />
