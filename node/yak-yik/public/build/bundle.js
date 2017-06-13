@@ -12599,7 +12599,8 @@ var Comments = function (_Component) {
     _this.state = {
       comment: {
         username: '',
-        body: ''
+        body: '',
+        timestamp: '1 hour ago'
       },
       list: [{ body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago' }, { body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago' }]
     };
@@ -12609,38 +12610,20 @@ var Comments = function (_Component) {
   _createClass(Comments, [{
     key: 'submitComment',
     value: function submitComment() {
-      console.log('added comment: ' + JSON.stringify(this.state.comment));
-      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] }
-      // let updatedList = Object.assign([], this.state.list)
-      // updatedList.push(this.state.comment)
-
-      );this.setState({
-        list: updatedList
-      });
+      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] });
+      this.setState({ list: updatedList });
     }
   }, {
     key: 'updateUsername',
     value: function updateUsername(e) {
-      console.log('username updated: ' + e.target.value);
-      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { username: { $set: e.target.value } }
-      // let updatedComment = Object.assign({}, this.state.comment)
-      // updatedComment['username'] = e.target.value
-
-      );this.setState({
-        comment: updatedComment
-      });
+      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { username: { $set: e.target.value } });
+      this.setState({ comment: updatedComment });
     }
   }, {
     key: 'updateBody',
     value: function updateBody(e) {
-      console.log('update comment: ' + e.target.value);
-      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { body: { $set: e.target.value } }
-      // let updatedComment = Object.assign({}, this.state.comment)
-      // updatedComment['body'] = e.target.value
-
-      );this.setState({
-        comment: updatedComment
-      });
+      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { body: { $set: e.target.value } });
+      this.setState({ comment: updatedComment });
     }
   }, {
     key: 'render',

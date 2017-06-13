@@ -32,7 +32,8 @@ export default class Comments extends Component {
     this.state = {
       comment: {
         username: '',
-        body: ''
+        body: '',
+        timestamp: '1 hour ago'
       },
       list: [
         {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
@@ -43,36 +44,18 @@ export default class Comments extends Component {
   }
 
   submitComment() {
-    console.log('added comment: ' + JSON.stringify(this.state.comment))
     let updatedList = update(this.state.list, {$push: [this.state.comment]})
-    // let updatedList = Object.assign([], this.state.list)
-    // updatedList.push(this.state.comment)
-
-    this.setState({
-      list: updatedList
-    })
+    this.setState({list: updatedList})
   }
 
   updateUsername(e) {
-    console.log('username updated: ' + e.target.value)
     let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
-    // let updatedComment = Object.assign({}, this.state.comment)
-    // updatedComment['username'] = e.target.value
-
-    this.setState({
-      comment: updatedComment
-    })
+    this.setState({comment: updatedComment})
   }
 
   updateBody(e) {
-    console.log('update comment: ' + e.target.value)
     let updatedComment = update(this.state.comment, {body: {$set: e.target.value}})
-    // let updatedComment = Object.assign({}, this.state.comment)
-    // updatedComment['body'] = e.target.value
-
-    this.setState({
-      comment: updatedComment
-    })
+    this.setState({comment: updatedComment})
   }
 
   render() {
