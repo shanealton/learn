@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div`
+  display: flex;
+`
+
+const Avatar = styled.div`
+  width: 30px;
+  height: 30px;
+  margin: 3px 15px 0 0;
+  border-radius: 2px;
+  background: #D0D2D3;
+`
+
+const CommentBody = styled.div`
+  flex: 1;
+`
+
 const CommentItem = styled.div`
-  margin: 5px 0;
   font-size: 12px;
 
   &:first-of-type {
@@ -20,13 +35,17 @@ const CommentItem = styled.div`
 export default class Comment extends Component {
   render() {
     return (
-      <div>
-        <CommentItem>{this.props.currentComment.username}
-          <span>{this.props.currentComment.timestamp}</span>
-        </CommentItem>
+      <Container>
+        <Avatar />
 
-        <CommentItem>{this.props.currentComment.body}</CommentItem>
-      </div>
+        <CommentBody>
+          <CommentItem>{this.props.currentComment.username}
+            <span>{this.props.currentComment.timestamp}</span>
+          </CommentItem>
+
+          <CommentItem>{this.props.currentComment.body}</CommentItem>
+        </CommentBody>
+      </Container>
     )
   }
 }

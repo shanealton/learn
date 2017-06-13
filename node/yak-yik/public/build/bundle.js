@@ -12381,7 +12381,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  flex: 1;\n  margin-left: 240px;\n'], ['\n  flex: 1;\n  margin-left: 240px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n'], ['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  overflow-y: scroll;\n'], ['\n  flex: 1;\n  overflow-y: scroll;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  padding-right: 278px;\n'], ['\n  flex: 1;\n  padding-right: 278px;\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12554,7 +12554,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  padding: 10px 40px;\n'], ['\n  padding: 10px 40px;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n'], ['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    margin: 15px 0;\n  }\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12699,7 +12699,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _templateObject = _taggedTemplateLiteral(['\n  height: 96px;\n  padding: 40px 40px 0 40px;\n  flex: 1 0 100%;\n'], ['\n  height: 96px;\n  padding: 40px 40px 0 40px;\n  flex: 1 0 100%;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  justify-content: space-between;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n'], ['\n  font-size: 20px;\n  font-weight: 400;\n  color: #1b2733;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #777;\n'], ['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #777;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n'], ['\n  width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12775,7 +12775,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 96px;\n  padding: 40px 0 0 15px;\n'], ['\n  width: 100%;\n  height: 96px;\n  padding: 40px 0 0 15px;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  background: #777;\n'], ['\n  width: 30px;\n  height: 30px;\n  background: #777;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  background: #827ad2;\n  border-radius: 2px;\n'], ['\n  width: 30px;\n  height: 30px;\n  background: #827ad2;\n  border-radius: 2px;\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12907,7 +12907,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n'], ['\n  margin: 5px 0;\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n'], ['\n  display: flex;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 30px;\n  height: 30px;\n  margin: 3px 15px 0 0;\n  border-radius: 2px;\n  background: #D0D2D3;\n'], ['\n  width: 30px;\n  height: 30px;\n  margin: 3px 15px 0 0;\n  border-radius: 2px;\n  background: #D0D2D3;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1;\n'], ['\n  flex: 1;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n'], ['\n  font-size: 12px;\n\n  &:first-of-type {\n    font-weight: 600;\n    font-size: 14px;\n  }\n\n  > span {\n    font-size: 11px;\n    font-weight: 400;\n    margin-left: 10px;\n  }\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12927,7 +12930,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var CommentItem = _styledComponents2.default.div(_templateObject);
+var Container = _styledComponents2.default.div(_templateObject);
+
+var Avatar = _styledComponents2.default.div(_templateObject2);
+
+var CommentBody = _styledComponents2.default.div(_templateObject3);
+
+var CommentItem = _styledComponents2.default.div(_templateObject4);
 
 var Comment = function (_Component) {
   _inherits(Comment, _Component);
@@ -12942,22 +12951,27 @@ var Comment = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        Container,
         null,
+        _react2.default.createElement(Avatar, null),
         _react2.default.createElement(
-          CommentItem,
+          CommentBody,
           null,
-          this.props.currentComment.username,
           _react2.default.createElement(
-            'span',
+            CommentItem,
             null,
-            this.props.currentComment.timestamp
+            this.props.currentComment.username,
+            _react2.default.createElement(
+              'span',
+              null,
+              this.props.currentComment.timestamp
+            )
+          ),
+          _react2.default.createElement(
+            CommentItem,
+            null,
+            this.props.currentComment.body
           )
-        ),
-        _react2.default.createElement(
-          CommentItem,
-          null,
-          this.props.currentComment.body
         )
       );
     }
@@ -12983,7 +12997,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: flex-start;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n'], ['\n  display: flex;\n  align-items: flex-start;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #1b2733;\n'], ['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #1b2733;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n'], ['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1;\n  padding: 0 5px;\n'], ['\n  flex: 1;\n  padding: 0 5px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  font-size: 13px;\n  color: #1b2733;\n'], ['\n  flex: 1;\n  font-size: 13px;\n  color: #1b2733;\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n  flex: 1 0 50%;\n  font-size: 12px;\n  color: #637282;\n'], ['\n  flex: 1 0 50%;\n  font-size: 12px;\n  color: #637282;\n']);

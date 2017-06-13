@@ -20,7 +20,9 @@ const List = styled.ul`
 
   > li {
     list-style: none;
-    margin: 15px 0;
+    border-bottom: 1px solid #E6E8EB;
+    margin: 0 0;
+    padding: 15px 0;
   }
 `
 

@@ -10,7 +10,8 @@ const Container = styled.div`
 const LogoIcon = styled.div`
   width: 30px;
   height: 30px;
-  background: #777;
+  background: #827ad2;
+  border-radius: 2px;
 `
 
 export default class Logo extends Component {

@@ -24,7 +24,7 @@ const Sidebar = styled.div`
 
 const Body = styled.div`
   flex: 1;
-  overflow-y: scroll;
+  padding-right: 278px;
 `
 
 export default class Home extends Component {

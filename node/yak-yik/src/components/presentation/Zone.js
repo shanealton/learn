@@ -17,7 +17,7 @@ const Avatar = styled.div`
   max-width: 30px;
   height: 30px;
   border-radius: 15px;
-  background: #1b2733;
+  background: #D0D2D3;
 `
 
 const MediaBody = styled.div`

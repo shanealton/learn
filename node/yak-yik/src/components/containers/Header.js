@@ -22,7 +22,7 @@ const Profile = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  background: #777;
+  background: #D0D2D3;
 `
 
 export default class Header extends Component {
