@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Zone from '../presentation/Zone'
+import AddZone from '../presentation/AddZone'
 
 export default class Zones extends Component {
   constructor() {
@@ -19,7 +20,10 @@ export default class Zones extends Component {
       return (<li key={i}><Zone currentZone={zone} /></li>)
     })
     return (
+      <div>
       <ul>{listItems}</ul>
+      <AddZone />
+      </div>
     )
   }
 }
