@@ -19,7 +19,9 @@ const Sidebar = styled.div`
   width: 240px;
   position: fixed;
   background: #F7F9FA;
-  min-height: 100%;
+  height: 100%;
+  padding-bottom: 80px;
+  overflow: auto;
 `
 
 const Body = styled.div`

@@ -12380,7 +12380,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  flex: 1;\n  margin-left: 240px;\n'], ['\n  flex: 1;\n  margin-left: 240px;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n'], ['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  min-height: 100%;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  height: 100%;\n  padding-bottom: 80px;\n  overflow: auto;\n'], ['\n  width: 240px;\n  position: fixed;\n  background: #F7F9FA;\n  height: 100%;\n  padding-bottom: 80px;\n  overflow: auto;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  padding-right: 278px;\n'], ['\n  flex: 1;\n  padding-right: 278px;\n']);
 
 var _react = __webpack_require__(12);
@@ -12824,6 +12824,10 @@ var _react = __webpack_require__(12);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _immutabilityHelper = __webpack_require__(105);
+
+var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
+
 var _styledComponents = __webpack_require__(14);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
@@ -12853,12 +12857,23 @@ var Zones = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Zones.__proto__ || Object.getPrototypeOf(Zones)).call(this));
 
     _this.state = {
+      zone: {
+        name: 'Zone 5',
+        zipCode: '10016',
+        numComments: '60'
+      },
       list: [{ name: 'Zone 1', zipCode: '10012', numComments: 10 }, { name: 'Zone 2', zipCode: '10013', numComments: 20 }, { name: 'Zone 3', zipCode: '10014', numComments: 30 }, { name: 'Zone 4', zipCode: '10015', numComments: 40 }]
     };
     return _this;
   }
 
   _createClass(Zones, [{
+    key: 'updateZone',
+    value: function updateZone(e) {
+      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.zone] });
+      this.setState({ list: updatedList });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var listItems = this.state.list.map(function (zone, i) {
@@ -12876,7 +12891,7 @@ var Zones = function (_Component) {
           null,
           listItems
         ),
-        _react2.default.createElement(_AddZone2.default, null)
+        _react2.default.createElement(_AddZone2.default, { onClick: this.updateZone.bind(this) })
       );
     }
   }]);
@@ -27103,7 +27118,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 80px;\n  padding: 0 15px;\n  font-size: 14px;\n  line-height: 80px;\n  cursor: pointer;\n  color: #1B2733;\n\n  &:hover {\n    background: #E6E8EB;\n  }\n'], ['\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 80px;\n  padding: 0 15px;\n  font-size: 14px;\n  line-height: 80px;\n  cursor: pointer;\n  color: #1B2733;\n\n  &:hover {\n    background: #E6E8EB;\n  }\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position: fixed;\n  bottom: 0;\n  width: 240px;\n  height: 80px;\n  padding: 0 15px;\n  font-size: 14px;\n  line-height: 80px;\n  cursor: pointer;\n  color: #1B2733;\n  z-index: 1;\n  background: #F7F9FA;\n\n  &:hover {\n    background: #E6E8EB;\n  }\n'], ['\n  position: fixed;\n  bottom: 0;\n  width: 240px;\n  height: 80px;\n  padding: 0 15px;\n  font-size: 14px;\n  line-height: 80px;\n  cursor: pointer;\n  color: #1B2733;\n  z-index: 1;\n  background: #F7F9FA;\n\n  &:hover {\n    background: #E6E8EB;\n  }\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  border-top: 1px solid #E6E8EB;\n'], ['\n  border-top: 1px solid #E6E8EB;\n']);
 
 var _react = __webpack_require__(12);
@@ -27142,7 +27157,7 @@ var AddZone = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         Container,
-        null,
+        { onClick: this.props.onClick },
         _react2.default.createElement(
           ButtonAdd,
           null,
