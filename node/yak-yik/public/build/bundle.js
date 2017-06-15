@@ -13723,6 +13723,8 @@ var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _utils = __webpack_require__(206);
+
 var _immutabilityHelper = __webpack_require__(56);
 
 var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
@@ -13730,10 +13732,6 @@ var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
 var _styledComponents = __webpack_require__(13);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _superagent = __webpack_require__(84);
-
-var _superagent2 = _interopRequireDefault(_superagent);
 
 var _Comment = __webpack_require__(93);
 
@@ -13783,15 +13781,12 @@ var Comments = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log('componentDidMount: ');
-      _superagent2.default.get('/api/comment').query(null).set('Accept', 'application/json').end(function (err, response) {
+      _utils.APIManager.get('/api/comment', null, function (err, response) {
         if (err) {
-          alert('Error: ' + err);
+          console.log('Error: ' + err.message);
           return;
         }
-        console.log(JSON.stringify(response.body));
-        var results = response.body.results;
-        _this2.setState({ list: results });
+        _this2.setState({ list: response.results });
       });
     }
   }, {
