@@ -12598,7 +12598,7 @@ var Comments = function (_Component) {
 
     _this.state = {
       comment: {
-        username: '',
+        username: 'shanealton',
         body: '',
         timestamp: '1 hour ago'
       },
@@ -12613,12 +12613,12 @@ var Comments = function (_Component) {
       var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] });
       this.setState({ list: updatedList });
     }
-  }, {
-    key: 'updateUsername',
-    value: function updateUsername(e) {
-      var updatedComment = (0, _immutabilityHelper2.default)(this.state.comment, { username: { $set: e.target.value } });
-      this.setState({ comment: updatedComment });
-    }
+
+    // updateUsername(e) {
+    //   let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
+    //   this.setState({comment: updatedComment})
+    // }
+
   }, {
     key: 'updateBody',
     value: function updateBody(e) {
@@ -12643,19 +12643,17 @@ var Comments = function (_Component) {
           null,
           'Add a comment'
         ),
-        _react2.default.createElement(
-          CommentsList,
-          null,
-          commentList
-        ),
-        _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), type: 'text', placeholder: 'Username' }),
-        _react2.default.createElement('br', null),
         _react2.default.createElement('input', { onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
         _react2.default.createElement('br', null),
         _react2.default.createElement(
           'button',
           { onClick: this.submitComment.bind(this) },
           'Add Comment'
+        ),
+        _react2.default.createElement(
+          CommentsList,
+          null,
+          commentList
         )
       );
     }

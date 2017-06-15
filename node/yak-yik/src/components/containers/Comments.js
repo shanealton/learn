@@ -31,7 +31,7 @@ export default class Comments extends Component {
     super()
     this.state = {
       comment: {
-        username: '',
+        username: 'shanealton',
         body: '',
         timestamp: '1 hour ago'
       },
@@ -48,10 +48,10 @@ export default class Comments extends Component {
     this.setState({list: updatedList})
   }
 
-  updateUsername(e) {
-    let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
-    this.setState({comment: updatedComment})
-  }
+  // updateUsername(e) {
+  //   let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
+  //   this.setState({comment: updatedComment})
+  // }
 
   updateBody(e) {
     let updatedComment = update(this.state.comment, {body: {$set: e.target.value}})
@@ -65,11 +65,10 @@ export default class Comments extends Component {
     return (
       <Container>
         <Breadcrumbs>Add a comment</Breadcrumbs>
-        <CommentsList>{commentList}</CommentsList>
-
-        <input onChange={this.updateUsername.bind(this)} type="text" placeholder="Username" /><br />
         <input onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." /><br />
         <button onClick={this.submitComment.bind(this)}>Add Comment</button>
+
+        <CommentsList>{commentList}</CommentsList>
       </Container>
     )
   }
