@@ -64,9 +64,9 @@ export default class Comments extends Component {
         timestamp: '1 hour ago'
       },
       list: [
-        {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
-        {body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago'},
-        {body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago'}
+        // {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
+        // {body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago'},
+        // {body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago'}
       ]
     }
   }
