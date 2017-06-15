@@ -64,16 +64,11 @@ export default class Comments extends Component {
         body: '',
         timestamp: '1 hour ago'
       },
-      list: [
-        // {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
-        // {body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago'},
-        // {body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago'}
-      ]
+      list: []
     }
   }
 
   componentDidMount() {
-    // http requests using superagent
     console.log('componentDidMount: ')
     superagent
       .get('/api/comment')
@@ -95,11 +90,6 @@ export default class Comments extends Component {
     this.setState({list: updatedList})
     document.getElementById('commentBox').value = ''
   }
-
-  // updateUsername(e) {
-  //   let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
-  //   this.setState({comment: updatedComment})
-  // }
 
   updateBody(e) {
     let updatedComment = update(this.state.comment, {body: {$set: e.target.value}})

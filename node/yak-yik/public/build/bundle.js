@@ -13773,11 +13773,7 @@ var Comments = function (_Component) {
         body: '',
         timestamp: '1 hour ago'
       },
-      list: [
-        // {body: 'comment 1', username: 'shanealton', timestamp: '1 hour ago'},
-        // {body: 'comment 2', username: 'shanealton', timestamp: '1 hour ago'},
-        // {body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago'}
-      ]
+      list: []
     };
     return _this;
   }
@@ -13787,7 +13783,6 @@ var Comments = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      // http requests using superagent
       console.log('componentDidMount: ');
       _superagent2.default.get('/api/comment').query(null).set('Accept', 'application/json').end(function (err, response) {
         if (err) {
@@ -13806,12 +13801,6 @@ var Comments = function (_Component) {
       this.setState({ list: updatedList });
       document.getElementById('commentBox').value = '';
     }
-
-    // updateUsername(e) {
-    //   let updatedComment = update(this.state.comment, {username: {$set: e.target.value}})
-    //   this.setState({comment: updatedComment})
-    // }
-
   }, {
     key: 'updateBody',
     value: function updateBody(e) {
@@ -14056,12 +14045,7 @@ var Zones = function (_Component) {
         zipCode: '10016',
         numComments: '60'
       },
-      list: [
-        // { name: 'Zone 1', zipCode: '10012', numComments: 10 },
-        // { name: 'Zone 2', zipCode: '10013', numComments: 20 },
-        // { name: 'Zone 3', zipCode: '10014', numComments: 30 },
-        // { name: 'Zone 4', zipCode: '10015', numComments: 40 }
-      ]
+      list: []
     };
     return _this;
   }
@@ -14071,7 +14055,6 @@ var Zones = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      // http requests using superagent
       _superagent2.default.get('/api/zone').query(null).set('Accept', 'application/json').end(function (err, response) {
         if (err) {
           alert('Error: ' + err);
