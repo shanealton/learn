@@ -24,7 +24,19 @@ export default class Zones extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
+    // http requests using superagent
+    superagent
+      .get('/api/zone')
+      .query(null)
+      .set('Accept', 'application/json')
+      .end((err, response) => {
+        if (err) {
+          alert('Error: ' + err)
+          return
+        }
+        let results = response.body.results
+        this.setState({list: results})
+      })
   }
 
   updateZone(e) {

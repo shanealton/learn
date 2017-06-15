@@ -13090,7 +13090,17 @@ var Zones = function (_Component) {
   _createClass(Zones, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('componentDidMount');
+      var _this2 = this;
+
+      // http requests using superagent
+      _superagent2.default.get('/api/zone').query(null).set('Accept', 'application/json').end(function (err, response) {
+        if (err) {
+          alert('Error: ' + err);
+          return;
+        }
+        var results = response.body.results;
+        _this2.setState({ list: results });
+      });
     }
   }, {
     key: 'updateZone',
