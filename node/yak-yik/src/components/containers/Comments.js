@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
 import styled from 'styled-components'
+import superagent from 'superagent'
 import Comment from '../presentation/Comment'
 
 const Container = styled.div`
@@ -69,6 +70,24 @@ export default class Comments extends Component {
         // {body: 'comment 3', username: 'shanealton', timestamp: '1 hour ago'}
       ]
     }
+  }
+
+  componentDidMount() {
+    // http requests using superagent
+    console.log('componentDidMount: ')
+    superagent
+      .get('/api/comment')
+      .query(null)
+      .set('Accept', 'application/json')
+      .end((err, response) => {
+        if (err) {
+          alert('Error: ' + err)
+          return
+        }
+        console.log(JSON.stringify(response.body))
+        let results = response.body.results
+        this.setState({list: results})
+      })
   }
 
   submitComment() {
