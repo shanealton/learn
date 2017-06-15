@@ -6,6 +6,7 @@ import Comment from '../presentation/Comment'
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  min-width: 500px;
   padding: 10px 40px;
 `
 
