@@ -4,6 +4,7 @@ import Header from '../containers/Header'
 import Logo from '../containers/Logo'
 import Zones from '../containers/Zones'
 import Comments from '../containers/Comments'
+import Modal from '../containers/Modal'
 
 const Container = styled.div`
   display: flex;
@@ -42,6 +43,7 @@ export default class Home extends Component {
           <Header />
           <Body><Comments /></Body>
         </Content>
+        <Modal />
       </Container>
     )
   }
