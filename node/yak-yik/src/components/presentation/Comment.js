@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import TimeAgo from 'react-timeago'
 
 const Container = styled.div`
   display: flex;
@@ -51,7 +52,7 @@ export default class Comment extends Component {
 
         <CommentBody>
           <CommentItem>{this.props.currentComment.username}
-            <span>{this.props.currentComment.timestamp}</span>
+            <span><TimeAgo date={this.props.currentComment.timestamp} /></span>
           </CommentItem>
 
           <CommentItem>{this.props.currentComment.body}</CommentItem>
