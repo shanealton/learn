@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import update from 'immutability-helper'
 import styled from 'styled-components'
+import superagent from 'superagent'
 import Zone from '../presentation/Zone'
 import AddZone from '../presentation/AddZone'
 
@@ -20,6 +21,10 @@ export default class Zones extends Component {
         // { name: 'Zone 4', zipCode: '10015', numComments: 40 }
       ]
     }
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount')
   }
 
   updateZone(e) {
