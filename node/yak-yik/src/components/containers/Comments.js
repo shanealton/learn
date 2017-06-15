@@ -25,6 +25,7 @@ const CommentBox = styled.textarea`
   outline: none;
   border: 1px solid #E6E8EB;
   border-radius: 2px;
+  resize: none;
   font-size: 12px;
 `
 
