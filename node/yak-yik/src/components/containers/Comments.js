@@ -74,6 +74,7 @@ export default class Comments extends Component {
   submitComment() {
     let updatedList = update(this.state.list, {$push: [this.state.comment]})
     this.setState({list: updatedList})
+    document.getElementById('commentBox').value = ''
   }
 
   // updateUsername(e) {
@@ -93,7 +94,7 @@ export default class Comments extends Component {
     return (
       <Container>
         <Breadcrumbs>Add a comment</Breadcrumbs>
-        <CommentBox onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." />
+        <CommentBox id="commentBox" onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." />
         <SubmitButton onClick={this.submitComment.bind(this)}>Add Comment</SubmitButton>
 
         <CommentsList>{commentList}</CommentsList>

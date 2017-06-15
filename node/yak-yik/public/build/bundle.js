@@ -12618,6 +12618,7 @@ var Comments = function (_Component) {
     value: function submitComment() {
       var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] });
       this.setState({ list: updatedList });
+      document.getElementById('commentBox').value = '';
     }
 
     // updateUsername(e) {
@@ -12649,7 +12650,7 @@ var Comments = function (_Component) {
           null,
           'Add a comment'
         ),
-        _react2.default.createElement(CommentBox, { onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
+        _react2.default.createElement(CommentBox, { id: 'commentBox', onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
         _react2.default.createElement(
           SubmitButton,
           { onClick: this.submitComment.bind(this) },
