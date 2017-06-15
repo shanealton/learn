@@ -12552,9 +12552,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  padding: 10px 40px;\n'], ['\n  padding: 10px 40px;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  padding: 10px 40px;\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  padding: 10px 40px;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n'], ['\n  font-size: 13px;\n  font-weight: 400;\n  color: #637282;\n  margin: 0 0 20px 0;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n'], ['\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1 0 100%;\n  width: 100%;\n  height: 80px;\n  padding: 15px;\n  outline: none;\n  border: 1px solid #E6E8EB;\n  border-radius: 2px;\n  font-size: 12px;\n'], ['\n  flex: 1 0 100%;\n  width: 100%;\n  height: 80px;\n  padding: 15px;\n  outline: none;\n  border: 1px solid #E6E8EB;\n  border-radius: 2px;\n  font-size: 12px;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  width: 120px;\n  height: 40px;\n  margin: 15px 0 15px auto;\n  border: 1px solid transparent;\n  border-radius: 2px;\n  outline: none;\n  background: #333;\n  color: #fff;\n  font-size: 12px;\n'], ['\n  width: 120px;\n  height: 40px;\n  margin: 15px 0 15px auto;\n  border: 1px solid transparent;\n  border-radius: 2px;\n  outline: none;\n  background: #333;\n  color: #fff;\n  font-size: 12px;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  flex: 1 0 100%;\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n'], ['\n  flex: 1 0 100%;\n  margin: 0;\n  padding: 0;\n\n  > li {\n    list-style: none;\n    border-bottom: 1px solid #E6E8EB;\n    margin: 0 0;\n    padding: 15px 0;\n  }\n']);
 
 var _react = __webpack_require__(12);
 
@@ -12586,7 +12588,11 @@ var Container = _styledComponents2.default.div(_templateObject);
 
 var Breadcrumbs = _styledComponents2.default.h3(_templateObject2);
 
-var CommentsList = _styledComponents2.default.ul(_templateObject3);
+var CommentBox = _styledComponents2.default.textarea(_templateObject3);
+
+var SubmitButton = _styledComponents2.default.button(_templateObject4);
+
+var CommentsList = _styledComponents2.default.ul(_templateObject5);
 
 var Comments = function (_Component) {
   _inherits(Comments, _Component);
@@ -12643,10 +12649,9 @@ var Comments = function (_Component) {
           null,
           'Add a comment'
         ),
-        _react2.default.createElement('input', { onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
-        _react2.default.createElement('br', null),
+        _react2.default.createElement(CommentBox, { onChange: this.updateBody.bind(this), type: 'text', placeholder: 'Say something...' }),
         _react2.default.createElement(
-          'button',
+          SubmitButton,
           { onClick: this.submitComment.bind(this) },
           'Add Comment'
         ),

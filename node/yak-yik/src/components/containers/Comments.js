@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Comment from '../presentation/Comment'
 
 const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px 40px;
 `
 
@@ -14,7 +16,31 @@ const Breadcrumbs = styled.h3 `
   margin: 0 0 20px 0;
 `
 
+const CommentBox = styled.textarea`
+  flex: 1 0 100%;
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #E6E8EB;
+  border-radius: 2px;
+  font-size: 12px;
+`
+
+const SubmitButton = styled.button`
+  width: 120px;
+  height: 40px;
+  margin: 15px 0 15px auto;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  outline: none;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+`
+
 const CommentsList = styled.ul`
+  flex: 1 0 100%;
   margin: 0;
   padding: 0;
 
@@ -65,8 +91,8 @@ export default class Comments extends Component {
     return (
       <Container>
         <Breadcrumbs>Add a comment</Breadcrumbs>
-        <input onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." /><br />
-        <button onClick={this.submitComment.bind(this)}>Add Comment</button>
+        <CommentBox onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." />
+        <SubmitButton onClick={this.submitComment.bind(this)}>Add Comment</SubmitButton>
 
         <CommentsList>{commentList}</CommentsList>
       </Container>
