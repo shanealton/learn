@@ -12641,7 +12641,7 @@ var Comments = function (_Component) {
         _react2.default.createElement(
           Breadcrumbs,
           null,
-          'Zone 1'
+          'Add a comment'
         ),
         _react2.default.createElement(
           CommentsList,

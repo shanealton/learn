@@ -64,7 +64,7 @@ export default class Comments extends Component {
     })
     return (
       <Container>
-        <Breadcrumbs>Zone 1</Breadcrumbs>
+        <Breadcrumbs>Add a comment</Breadcrumbs>
         <CommentsList>{commentList}</CommentsList>
 
         <input onChange={this.updateUsername.bind(this)} type="text" placeholder="Username" /><br />
