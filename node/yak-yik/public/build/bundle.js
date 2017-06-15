@@ -14003,6 +14003,8 @@ var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _utils = __webpack_require__(206);
+
 var _immutabilityHelper = __webpack_require__(56);
 
 var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
@@ -14010,10 +14012,6 @@ var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
 var _styledComponents = __webpack_require__(13);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-var _superagent = __webpack_require__(84);
-
-var _superagent2 = _interopRequireDefault(_superagent);
 
 var _Zone = __webpack_require__(94);
 
@@ -14055,13 +14053,12 @@ var Zones = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _superagent2.default.get('/api/zone').query(null).set('Accept', 'application/json').end(function (err, response) {
+      _utils.APIManager.get('/api/zone', null, function (err, response) {
         if (err) {
-          alert('Error: ' + err);
+          console.log('Error: ' + err.message);
           return;
         }
-        var results = response.body.results;
-        _this2.setState({ list: results });
+        _this2.setState({ list: response.results });
       });
     }
   }, {
@@ -29430,6 +29427,66 @@ exports.cleanHeader = function(header, shouldStripCookie){
   }
   return header;
 };
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _superagent = __webpack_require__(84);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  get: function get(url, params, callback) {
+    _superagent2.default.get(url).query(params).set('Accept', 'application/json').end(function (err, response) {
+      if (err) {
+        callback(err, null);
+        return;
+      }
+      var confirmation = response.body.confirmation;
+      if (confirmation != 'success') {
+        callback({ message: response.body.message }, null);
+        return;
+      }
+      callback(null, response.body);
+    });
+  },
+
+  post: function post() {},
+
+  put: function put() {},
+
+  delete: function _delete() {}
+};
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.APIManager = undefined;
+
+var _APIManager = __webpack_require__(205);
+
+var _APIManager2 = _interopRequireDefault(_APIManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.APIManager = _APIManager2.default;
 
 /***/ })
 /******/ ]);

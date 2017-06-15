@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { APIManager } from '../../utils'
 import update from 'immutability-helper'
 import styled from 'styled-components'
-import superagent from 'superagent'
 import Zone from '../presentation/Zone'
 import AddZone from '../presentation/AddZone'
 
@@ -19,18 +19,13 @@ export default class Zones extends Component {
   }
 
   componentDidMount() {
-    superagent
-      .get('/api/zone')
-      .query(null)
-      .set('Accept', 'application/json')
-      .end((err, response) => {
-        if (err) {
-          alert('Error: ' + err)
-          return
-        }
-        let results = response.body.results
-        this.setState({list: results})
-      })
+    APIManager.get('/api/zone', null, (err, response) => {
+      if (err) {
+        console.log('Error: ' + err.message)
+        return
+      }
+      this.setState({list: response.results})
+    })
   }
 
   updateZone(e) {
