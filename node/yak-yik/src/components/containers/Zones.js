@@ -28,6 +28,10 @@ export default class Zones extends Component {
     })
   }
 
+  addZone() {
+    console.log('Add Zone: ' + JSON.stringify(this.state.zone))
+  }
+
   updateZone(e) {
     let updatedList = update(this.state.list, {$push: [this.state.zone]})
     this.setState({list: updatedList})
