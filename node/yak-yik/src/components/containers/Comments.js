@@ -96,7 +96,7 @@ export default class Comments extends Component {
     return (
       <Container>
         <Breadcrumbs>Add a comment</Breadcrumbs>
-        <CommentBox id="commentBox" onChange={this.updateBody.bind(this)}type="text" placeholder="Say something..." />
+        <CommentBox id="commentBox" onChange={this.updateBody.bind(this)} type="text" placeholder="Say something..." />
         <SubmitButton onClick={this.submitComment.bind(this)}>Add Comment</SubmitButton>
 
         <CommentsList>{commentList}</CommentsList>
