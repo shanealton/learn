@@ -13451,6 +13451,8 @@ var Zones = function (_Component) {
   }, {
     key: 'addZone',
     value: function addZone() {
+      var _this3 = this;
+
       console.log('Add Zone: ' + JSON.stringify(this.state.zone));
 
       var updatedZone = Object.assign({}, this.state.zone);
@@ -13462,10 +13464,10 @@ var Zones = function (_Component) {
           return;
         }
         console.log('Zone Created: ' + JSON.stringify(response));
-      });
 
-      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.zone] });
-      this.setState({ list: updatedList });
+        var updatedList = (0, _immutabilityHelper2.default)(_this3.state.list, { $push: [response.result] });
+        _this3.setState({ list: updatedList });
+      });
     }
   }, {
     key: 'updateZone',

@@ -40,10 +40,10 @@ export default class Zones extends Component {
         return
       }
       console.log('Zone Created: ' + JSON.stringify(response))
-    })
 
-    let updatedList = update(this.state.list, {$push: [this.state.zone]})
-    this.setState({list: updatedList})
+      let updatedList = update(this.state.list, {$push: [response.result]})
+      this.setState({list: updatedList})
+    })
   }
 
   updateZone(e) {
