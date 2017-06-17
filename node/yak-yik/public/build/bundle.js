@@ -13096,8 +13096,7 @@ var Comments = function (_Component) {
     _this.state = {
       comment: {
         username: 'shanealton',
-        body: '',
-        timestamp: '1 hour ago'
+        body: ''
       },
       list: []
     };
@@ -13120,8 +13119,18 @@ var Comments = function (_Component) {
   }, {
     key: 'submitComment',
     value: function submitComment() {
-      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.comment] });
-      this.setState({ list: updatedList });
+      var _this3 = this;
+
+      _utils.APIManager.post('/api/comment', this.state.comment, function (err, response) {
+        if (err) {
+          console.log('Error: ' + err);
+          return;
+        }
+        console.log('Comment created: ' + JSON.stringify(response));
+
+        var updatedList = (0, _immutabilityHelper2.default)(_this3.state.list, { $push: [response.result] });
+        _this3.setState({ list: updatedList });
+      });
       document.getElementById('commentBox').value = '';
     }
   }, {

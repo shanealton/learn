@@ -61,8 +61,7 @@ export default class Comments extends Component {
     this.state = {
       comment: {
         username: 'shanealton',
-        body: '',
-        timestamp: '1 hour ago'
+        body: ''
       },
       list: []
     }
@@ -79,8 +78,16 @@ export default class Comments extends Component {
   }
 
   submitComment() {
-    let updatedList = update(this.state.list, {$push: [this.state.comment]})
-    this.setState({list: updatedList})
+    APIManager.post('/api/comment', this.state.comment, (err, response) => {
+      if (err) {
+        console.log('Error: ' + err)
+        return
+      }
+      console.log('Comment created: ' + JSON.stringify(response))
+
+      let updatedList = update(this.state.list, {$push: [response.result]})
+      this.setState({list: updatedList})
+    })
     document.getElementById('commentBox').value = ''
   }
 
