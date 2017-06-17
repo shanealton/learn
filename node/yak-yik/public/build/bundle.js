@@ -13418,24 +13418,11 @@ var Zones = function (_Component) {
   }, {
     key: 'updateZone',
     value: function updateZone(e) {
-      console.log(e.target.value);
-      var updatedZone = (0, _immutabilityHelper2.default)(this.state.zone, { name: { $set: e.target.value } });
+      console.log('update: ' + e.target.id + ' == ' + e.target.value);
+      var updatedZone = Object.assign({}, this.state.zone);
+      updatedZone[e.target.id] = e.target.value;
       this.setState({ zone: updatedZone });
     }
-  }, {
-    key: 'updateZip',
-    value: function updateZip(e) {
-      console.log(e.target.value);
-      var updatedZone = (0, _immutabilityHelper2.default)(this.state.zone, { zipCode: { $set: e.target.value } });
-      this.setState({ zone: updatedZone });
-    }
-
-    // updateZone(e) {
-    //   let updatedList = update(this.state.list, {$push: [this.state.zone]})
-    //   this.setState({list: updatedList})
-    // }
-    // <AddZone onClick={this.updateZone.bind(this)}/>
-
   }, {
     key: 'render',
     value: function render() {
@@ -13454,9 +13441,9 @@ var Zones = function (_Component) {
           null,
           listItems
         ),
-        _react2.default.createElement('input', { onChange: this.updateZone.bind(this), type: 'text', placeholder: 'Zone' }),
+        _react2.default.createElement('input', { id: 'name', onChange: this.updateZone.bind(this), type: 'text', placeholder: 'Zone' }),
         _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { onChange: this.updateZip.bind(this), type: 'text', placeholder: 'Zip Code' }),
+        _react2.default.createElement('input', { id: 'zipCode', onChange: this.updateZone.bind(this), type: 'text', placeholder: 'Zip Code' }),
         _react2.default.createElement('br', null),
         _react2.default.createElement('input', { onClick: this.addZone.bind(this), type: 'submit', value: 'Add Zone' })
       );

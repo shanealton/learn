@@ -47,22 +47,11 @@ export default class Zones extends Component {
   }
 
   updateZone(e) {
-    console.log(e.target.value)
-    let updatedZone = update(this.state.zone, {name: {$set: e.target.value}})
+    console.log('update: ' + e.target.id + ' == ' + e.target.value)
+    let updatedZone = Object.assign({}, this.state.zone)
+    updatedZone[e.target.id] = e.target.value
     this.setState({zone: updatedZone})
   }
-
-  updateZip(e) {
-    console.log(e.target.value)
-    let updatedZone = update(this.state.zone, {zipCode: {$set: e.target.value}})
-    this.setState({zone: updatedZone})
-  }
-
-  // updateZone(e) {
-  //   let updatedList = update(this.state.list, {$push: [this.state.zone]})
-  //   this.setState({list: updatedList})
-  // }
-  // <AddZone onClick={this.updateZone.bind(this)}/>
 
   render() {
     const listItems = this.state.list.map((zone, i) => {
@@ -71,8 +60,8 @@ export default class Zones extends Component {
     return (
       <div>
       <ul>{listItems}</ul>
-      <input onChange={this.updateZone.bind(this)} type="text" placeholder="Zone" /><br />
-      <input onChange={this.updateZip.bind(this)} type="text" placeholder="Zip Code" /><br />
+      <input id="name" onChange={this.updateZone.bind(this)} type="text" placeholder="Zone" /><br />
+      <input id="zipCode" onChange={this.updateZone.bind(this)} type="text" placeholder="Zip Code" /><br />
       <input onClick={this.addZone.bind(this)} type="submit" value="Add Zone" />
       </div>
     )
