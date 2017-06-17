@@ -13454,19 +13454,18 @@ var Zones = function (_Component) {
       console.log('Add Zone: ' + JSON.stringify(this.state.zone));
 
       var updatedZone = Object.assign({}, this.state.zone);
-      updatedZone['zipCodes'] = updatedZone.zipCode.split(','
-      // 
-      // APIManager.post('/api/zone', updatedZone, (err, response) => {
-      //   if (err) {
-      //     console.log('Error: ' + err)
-      //     return
-      //   }
-      //   console.log('Zone Created: ' + JSON.stringify(response.body))
-      // })
+      updatedZone['zipCodes'] = updatedZone.zipCode.split(',');
 
-      // let updatedList = update(this.state.list, {$push: [this.state.zone]})
-      // this.setState({list: updatedList})
-      );
+      _utils.APIManager.post('/api/zone', updatedZone, function (err, response) {
+        if (err) {
+          console.log('Error: ' + err);
+          return;
+        }
+        console.log('Zone Created: ' + JSON.stringify(response));
+      });
+
+      var updatedList = (0, _immutabilityHelper2.default)(this.state.list, { $push: [this.state.zone] });
+      this.setState({ list: updatedList });
     }
   }, {
     key: 'updateZone',

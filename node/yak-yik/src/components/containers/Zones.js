@@ -33,17 +33,17 @@ export default class Zones extends Component {
 
     let updatedZone = Object.assign({}, this.state.zone)
     updatedZone['zipCodes'] = updatedZone.zipCode.split(',')
-    // 
-    // APIManager.post('/api/zone', updatedZone, (err, response) => {
-    //   if (err) {
-    //     console.log('Error: ' + err)
-    //     return
-    //   }
-    //   console.log('Zone Created: ' + JSON.stringify(response.body))
-    // })
 
-    // let updatedList = update(this.state.list, {$push: [this.state.zone]})
-    // this.setState({list: updatedList})
+    APIManager.post('/api/zone', updatedZone, (err, response) => {
+      if (err) {
+        console.log('Error: ' + err)
+        return
+      }
+      console.log('Zone Created: ' + JSON.stringify(response))
+    })
+
+    let updatedList = update(this.state.list, {$push: [this.state.zone]})
+    this.setState({list: updatedList})
   }
 
   updateZone(e) {
