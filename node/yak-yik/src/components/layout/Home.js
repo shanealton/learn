@@ -4,7 +4,7 @@ import Header from '../containers/Header'
 import Logo from '../containers/Logo'
 import Zones from '../containers/Zones'
 import Comments from '../containers/Comments'
-import Modal from '../containers/Modal'
+import Modal from '../presentation/Modal'
 
 const Container = styled.div`
   display: flex;
