@@ -21,7 +21,7 @@ const Sidebar = styled.div`
   position: fixed;
   background: #F7F9FA;
   height: 100%;
-  padding-bottom: 80px;
+  padding-bottom: 166px;
   overflow: auto;
 `
 
