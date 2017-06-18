@@ -13393,6 +13393,11 @@ var Zones = function (_Component) {
       document.getElementById('zipCode').value = '';
     }
   }, {
+    key: 'selectZone',
+    value: function selectZone(index) {
+      this.setState({ selected: index });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this4 = this;
@@ -13402,7 +13407,7 @@ var Zones = function (_Component) {
         return _react2.default.createElement(
           'li',
           { key: i },
-          _react2.default.createElement(_Zone2.default, { isSelected: selected, currentZone: zone })
+          _react2.default.createElement(_Zone2.default, { index: i, select: _this4.selectZone.bind(_this4), isSelected: selected, currentZone: zone })
         );
       });
       return _react2.default.createElement(
@@ -13866,7 +13871,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: flex-start;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n'], ['\n  display: flex;\n  align-items: flex-start;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: flex-start;\n  cursor: pointer;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n'], ['\n  display: flex;\n  align-items: flex-start;\n  cursor: pointer;\n  padding: 15px;\n\n  :hover {\n    background: #E6E8EB;\n  }\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n'], ['\n  margin: 2px 1em 0 0;\n  width: 30px;\n  max-width: 30px;\n  height: 30px;\n  border-radius: 15px;\n  background: #D0D2D3;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  flex: 1;\n  padding: 0 5px;\n'], ['\n  flex: 1;\n  padding: 0 5px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  flex: 1;\n  font-size: 13px;\n  color: #1b2733;\n'], ['\n  flex: 1;\n  font-size: 13px;\n  color: #1b2733;\n']),
@@ -13910,6 +13915,12 @@ var Zone = function (_Component) {
   }
 
   _createClass(Zone, [{
+    key: 'onSelectZone',
+    value: function onSelectZone(e) {
+      e.preventDefault();
+      this.props.select(this.props.index);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var zoneActive = {
@@ -13918,7 +13929,7 @@ var Zone = function (_Component) {
       var active = this.props.isSelected ? zoneActive : null;
       return _react2.default.createElement(
         ListItem,
-        { style: active },
+        { style: active, onClick: this.onSelectZone.bind(this) },
         _react2.default.createElement(Avatar, null),
         _react2.default.createElement(
           MediaBody,

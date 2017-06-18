@@ -45,10 +45,14 @@ export default class Zones extends Component {
     document.getElementById('zipCode').value = ''
   }
 
+  selectZone(index) {
+    this.setState({selected: index})
+  }
+
   render() {
     const listItems = this.state.list.map((zone, i) => {
       let selected = (i == this.state.selected)
-      return (<li key={i}><Zone isSelected={selected} currentZone={zone} /></li>)
+      return (<li key={i}><Zone index={i} select={this.selectZone.bind(this)} isSelected={selected} currentZone={zone} /></li>)
     })
     return (
       <div>

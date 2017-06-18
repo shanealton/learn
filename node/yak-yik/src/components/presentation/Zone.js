@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 const ListItem = styled.div`
   display: flex;
   align-items: flex-start;
+  cursor: pointer;
   padding: 15px;
 
   :hover {
@@ -38,13 +39,18 @@ const CommentCount = styled.p`
 `
 
 export default class Zone extends Component {
+  onSelectZone(e) {
+    e.preventDefault()
+    this.props.select(this.props.index)
+  }
+
   render() {
     const zoneActive = {
       background: '#E6E8EB'
     }
     const active = (this.props.isSelected) ? zoneActive : null
     return (
-      <ListItem style={active}>
+      <ListItem style={active} onClick={this.onSelectZone.bind(this)}>
         <Avatar />
           <MediaBody>
             <Name>{this.props.currentZone.name}</Name>
