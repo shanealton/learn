@@ -13395,11 +13395,14 @@ var Zones = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
+
       var listItems = this.state.list.map(function (zone, i) {
+        var selected = i == _this4.state.selected;
         return _react2.default.createElement(
           'li',
           { key: i },
-          _react2.default.createElement(_Zone2.default, { isSelected: true, currentZone: zone })
+          _react2.default.createElement(_Zone2.default, { isSelected: selected, currentZone: zone })
         );
       });
       return _react2.default.createElement(

@@ -47,7 +47,8 @@ export default class Zones extends Component {
 
   render() {
     const listItems = this.state.list.map((zone, i) => {
-      return (<li key={i}><Zone isSelected={true} currentZone={zone} /></li>)
+      let selected = (i == this.state.selected)
+      return (<li key={i}><Zone isSelected={selected} currentZone={zone} /></li>)
     })
     return (
       <div>
