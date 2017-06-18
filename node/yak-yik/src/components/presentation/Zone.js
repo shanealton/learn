@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const ListItem = styled.div`
   display: flex;
@@ -39,8 +39,12 @@ const CommentCount = styled.p`
 
 export default class Zone extends Component {
   render() {
+    const zoneActive = {
+      background: '#E6E8EB'
+    }
+    const active = (this.props.isSelected) ? zoneActive : null
     return (
-      <ListItem>
+      <ListItem style={active}>
         <Avatar />
           <MediaBody>
             <Name>{this.props.currentZone.name}</Name>

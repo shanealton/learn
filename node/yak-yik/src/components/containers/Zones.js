@@ -10,6 +10,7 @@ export default class Zones extends Component {
   constructor() {
     super()
     this.state = {
+      selected: 0,
       list: []
     }
   }
@@ -46,7 +47,7 @@ export default class Zones extends Component {
 
   render() {
     const listItems = this.state.list.map((zone, i) => {
-      return (<li key={i}><Zone currentZone={zone} /></li>)
+      return (<li key={i}><Zone isSelected={true} currentZone={zone} /></li>)
     })
     return (
       <div>
