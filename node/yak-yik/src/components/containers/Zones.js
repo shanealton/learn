@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { APIManager } from '../../utils'
 import update from 'immutability-helper'
-import styled from 'styled-components'
 import Zone from '../presentation/Zone'
 import CreateZone from '../presentation/CreateZone'
-import AddZone from '../presentation/AddZone'
 
 export default class Zones extends Component {
   constructor() {
